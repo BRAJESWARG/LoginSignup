@@ -1,2 +1,2 @@
-# xlrt-auth-mern
+# login-signup-auth-mern
  MERN Login Signup
