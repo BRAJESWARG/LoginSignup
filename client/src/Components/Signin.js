@@ -10,7 +10,7 @@ import { UserContext } from '../App';
 
 const Signin = () => {
 
-  const {state, dispatch} = useContext(UserContext);
+  const { state, dispatch } = useContext(UserContext);
   console.log(state);
 
   const navigate = useNavigate();
@@ -48,7 +48,7 @@ const Signin = () => {
       <Row>
         <Col xs={12} sm={12} md={12} lg={6} xl={6} xxl={6} >
           <Image src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp" width="100%" />
-          <NavLink to='/signup' className='NavLink create-an-ccount-text' >Create an Account</NavLink>
+          <NavLink to='/register' className='NavLink create-an-ccount-text' >Create an Account</NavLink>
         </Col>
         <Col xs={12} sm={12} md={12} lg={6} xl={6} xxl={6} >
           <Form method='POST' className='register-form' id='register-form'>

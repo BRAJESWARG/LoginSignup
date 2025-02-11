@@ -5,7 +5,7 @@ const jwt = require('jsonwebtoken');
 const authenticate = require('../middleware/authenticate')
 
 require('../db/conn');
-const User = require('../model/userSchema')
+const User = require('../models/userSchema')
 
 router.get('/', (req, res) => {
     res.send('Hello world!')
@@ -83,6 +83,7 @@ router.post('/signin', async (req, res) => {
 
     try {
         let token;
+        // const token = jwt.sign({ _id: user._id }, process.env.JWT_SECRET, { expiresIn: "1h" });
         const { email, password } = req.body;
 
         if (!email || !password) {

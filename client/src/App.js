@@ -22,7 +22,7 @@ const App = () => {
   return (
     <div className="App">
       <Router>
-        <UserContext.Provider value={{state, dispatch}}>
+        <UserContext.Provider value={{ state, dispatch }}>
           <Navbar />
           <Routes>
             <Route path="/" element={<Home />} />

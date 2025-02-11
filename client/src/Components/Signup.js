@@ -38,7 +38,7 @@ const Signup = () => {
   const PostData = async (e) => {
     e.preventDefault();
     const { name, email, phone, work, password, cpassword } = user;
-    
+
     const response = await fetch('/register', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },

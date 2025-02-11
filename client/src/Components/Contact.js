@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 
 const Contact = () => {
 
-  const [userData, setUserData] = useState({name: '', email: '', phone: '',subject: '', message: ''});
+  const [userData, setUserData] = useState({ name: '', email: '', phone: '', subject: '', message: '' });
 
   const UserContact = async () => {
     try {
@@ -14,7 +14,7 @@ const Contact = () => {
       });
       const data = await response.json({});
       console.log(data);
-      setUserData({...userData, name:data.name, email:data.email, phone: data.phone});
+      setUserData({ ...userData, name: data.name, email: data.email, phone: data.phone });
       if (!response.status === 200) {
         const error = new Error(response.error);
         throw error;
@@ -32,7 +32,7 @@ const Contact = () => {
   const handleInput = (e) => {
     const { name, value } = e.target;
 
-    setUserData({...userData, [name]:value });
+    setUserData({ ...userData, [name]: value });
   }
 
   const contactForm = async (e) => {
@@ -43,17 +43,17 @@ const Contact = () => {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({name, email, phone, subject, message})
+      },
+      body: JSON.stringify({ name, email, phone, subject, message })
     });
     const data = await res.json();
-    if(!data) {
+    if (!data) {
       console.log("Message not send");
     }
     else {
       alert('Message Sent');
-      setUserData({...userData, message: "", subject: ""});
-      }
+      setUserData({ ...userData, message: "", subject: "" });
+    }
   }
 
   return (
